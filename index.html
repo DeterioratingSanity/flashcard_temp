@@ -10,40 +10,13 @@
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <link rel="stylesheet" href="style.css" type="text/css">
 
-    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
   </head>
 
   <body>
     <div class="main-carousel" data-flickity='{ "cellAlign": "left", "contain": true}'> <!--  , "wrapAround": true  -->
-
-      <div class="carousel-cell">
-        <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <h1 class="cardfront"></h1>
-          </div>
-          <div class="flip-card-back">
-            <p class="cardback"></p>
-          </div>
-        </div>
-      </div>
-      </div>
-
-      <div class="carousel-cell">
-        <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <h1 class="cardfront"></h1>
-          </div>
-          <div class="flip-card-back">
-            <p class="cardback"></p>
-          </div>
-        </div>
-      </div>
-
-      </div>
-
+<!--
       <div class="carousel-cell">
         <div class="flip-card">
         <div class="flip-card-inner">
@@ -83,7 +56,7 @@
       </div>
       </div>
 
-      <div class="carousel-cell" style="">
+      <div class="carousel-cell">
         <div class="flip-card">
         <div class="flip-card-inner">
           <div class="flip-card-front">
@@ -95,12 +68,39 @@
         </div>
       </div>
       </div>
+
+      <div class="carousel-cell">
+        <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h1 class="cardfront"></h1>
+          </div>
+          <div class="flip-card-back">
+            <p class="cardback"></p>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div class="carousel-cell">
+        <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h1 class="cardfront"></h1>
+          </div>
+          <div class="flip-card-back">
+            <p class="cardback"></p>
+          </div>
+        </div>
+      </div>
+      </div>
+    -->
     </div>
     <script>
 
           //if ($(window).width() < 1280) {
-          var termList = ["Term 1","Term 2","Term 3","Term 4","Term 5", "Term 6"];
-          var defnList = ["Definition 1","Definition 2","Definition 3","Definition 4","Definition 5", "Definition 6"];
+          var termList = ["Term 1","Term 2","Term 3","Term 4","Term 5", "Term 6", "Term 7"];
+          var defnList = ["Definition 1","Definition 2","Definition 3","Definition 4","Definition 5", "Definition 6", "Definition 7"];
           var terms = termList.length;
           var randArray = [];
 
@@ -128,6 +128,10 @@
     //          cardArray[i].innerHTML += "termList[randArray[i]]";
     //          console.log(cardArray[i] + " is set to " + termList[randArray[i]]);
     //        }
+            for(let i = 0; i < terms; i++){
+              let $cellElem = $("<div class='carousel-cell'><div class='flip-card'><div class='flip-card-inner'><div class='flip-card-front'><h1 class='cardfront'></h1></div><div class='flip-card-back'><p class='cardback'></p></div></div></div></div>");
+              $('.main-carousel').flickity('append', $cellElem );
+            }
 
             let cardfront = document.getElementsByClassName('cardfront');
             for (let i = 0; i < cardfront.length; i++){
