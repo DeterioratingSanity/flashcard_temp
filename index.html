@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta description="Template for flashcard ideas.">
+
+    <title>flash.card</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="style.css" type="text/css">
+
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <div class="main-carousel" data-flickity='{ "cellAlign": "left", "contain": true}'> <!--  , "wrapAround": true  -->
+
+      <div class="carousel-cell">
+        <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h1 class="cardfront"></h1>
+          </div>
+          <div class="flip-card-back">
+            <p class="cardback"></p>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div class="carousel-cell">
+        <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h1 class="cardfront"></h1>
+          </div>
+          <div class="flip-card-back">
+            <p class="cardback"></p>
+          </div>
+        </div>
+      </div>
+
+      </div>
+
+      <div class="carousel-cell">
+        <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h1 class="cardfront""></h1>
+          </div>
+          <div class="flip-card-back">
+            <p class="cardback"></p>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div class="carousel-cell">
+        <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h1 class="cardfront"></h1>
+          </div>
+          <div class="flip-card-back">
+            <p class="cardback"></p>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div class="carousel-cell">
+        <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h1 class="cardfront"></h1>
+          </div>
+          <div class="flip-card-back">
+            <p class="cardback"></p>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div class="carousel-cell" style="">
+        <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h1 class="cardfront"></h1>
+          </div>
+          <div class="flip-card-back">
+            <p class="cardback"></p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <script>
+
+          //if ($(window).width() < 1280) {
+          var termList = ["Term 1","Term 2","Term 3","Term 4","Term 5", "Term 6"];
+          var defnList = ["Definition 1","Definition 2","Definition 3","Definition 4","Definition 5", "Definition 6"];
+          var terms = termList.length;
+          var randArray = [];
+
+          $(document).ready(function(){
+            while(randArray.length < terms){
+              var temp = Math.floor(Math.random()*terms);
+
+              if (randArray.indexOf(temp) != -1){
+                temp = Math.floor(Math.random()*terms);
+              } else {
+                randArray.push(temp);
+              }
+            }
+
+            //console.log(randArray);
+
+    //        var cardArray = [];
+    //        for(let i = 0; i < terms; i++){
+    //          cardArray.push("cardfront_" + i);
+    //        }
+    //        console.log(cardArray);
+
+    //        for(let i = 0; i < terms; i++){
+    //          //$(cardArray[i]).text(termList[randArray[i]]);
+    //          cardArray[i].innerHTML += "termList[randArray[i]]";
+    //          console.log(cardArray[i] + " is set to " + termList[randArray[i]]);
+    //        }
+
+            let cardfront = document.getElementsByClassName('cardfront');
+            for (let i = 0; i < cardfront.length; i++){
+              cardfront[i].innerHTML = termList[randArray[i]];
+            }
+
+            let cardback = document.getElementsByClassName('cardback');
+            for (let i = 0; i < cardback.length; i++){
+              cardback[i].innerHTML = defnList[randArray[i]];
+            }
+            //solution c. 'https://stackoverflow.com/questions/62235124/how-to-assign-the-innerhtml-of-array-elements-to-the-values-in-another-array'
+          });
+      </script>
+  </body>
+</html>
