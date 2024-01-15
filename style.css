@@ -5,8 +5,11 @@
 .main-carousel{
   /*display: inline;*/
   width: 60vw;
-  height: 80vh;
   margin: auto;
+}
+
+.flickity-page-dots{
+  margin-bottom: 15vh;
 }
 
 .carousel-cell {
