@@ -11,6 +11,30 @@
 .flickity-page-dots{
   margin-bottom: 15vh;
 }
+.flickity-page-dots .dot{
+  transition: 0.5s;
+}
+.flickity-page-dots .dot.is-selected {
+    opacity: 1;
+    background-color: dodgerblue;
+    transition: 0.5s;
+}
+.flickity-button {
+  background: #78c6ff;
+  transition: 0.8s;
+  box-shadow: 0 6px dodgerblue;
+}
+.flickity-button:hover {
+  background: dodgerblue;
+  transition: 0.5s;
+  box-shadow: 0 2px dodgerblue;
+}
+.flickity-button:active {
+  opacity: 1;
+}
+.flickity-button:disabled {
+  display: none;
+}
 
 .carousel-cell {
   width: 60vw; /* full width */
@@ -48,6 +72,7 @@
   -webkit-backface-visibility: hidden; /* Safari */
   backface-visibility: hidden;
 
+  border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -57,6 +82,7 @@
 .flip-card-front {
   background-color: #bbb;
   color: black;
+  box-shadow: 10px 10px dodgerblue;
 }
 
 .flip-card-back {
@@ -64,4 +90,5 @@
   color: white;
   transform: rotateY(180deg);
   font-size: 1.5em;
+  box-shadow: 10px 10px #bbb;
 }

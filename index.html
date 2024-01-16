@@ -15,17 +15,34 @@
   </head>
 
   <body>
-    <div class="main-carousel" data-flickity='{ "cellAlign": "left", "contain": true, "wrapAround": true}'> <!--  , "wrapAround": true  -->
+    <div class="main-carousel" data-flickity='{ "cellAlign": "left", "contain": true}'> <!--  , "wrapAround": true  -->
     </div>
     <script>
 
-          //if ($(window).width() < 1280) {
-          var termList = ["Term 1","Term 2","Term 3","Term 4","Term 5", "Term 6", "Term 7"];
-          var defnList = ["Definition 1","Definition 2","Definition 3","Definition 4","Definition 5", "Definition 6", "Definition 7"];
-          var terms = termList.length;
-          var randArray = [];
+          //if ($(window).width() < 1280)
+
+          const termSetOne = ["Chapter 1 Term 1", "Chapter 1 Term 2"];
+          const defnSetOne = ["Definition 1", "Definition 2"];
+
+          const termSetTwo = ["Chapter 2 Term 1", "Chapter 2 Term 2"];
+          const defnSetTwo = ["Definition 1", "Definition 2"];
+
+          const termLists = [termSetOne, termSetTwo];
+          const defnLists = [defnSetOne, defnSetTwo];
 
           $(document).ready(function(){
+
+            var set = prompt("Enter desired term set \n 1. Chapter 1 Vocab. \n 2. Chapter 2 Vocab.");
+
+            var termList = [];
+            var defnList = [];
+
+            termList = termLists[set-1];
+            defnList = defnLists[set-1];
+
+            var terms = termList.length;
+            var randArray = [];
+
             while(randArray.length < terms){
               var temp = Math.floor(Math.random()*terms);
 
@@ -49,6 +66,7 @@
     //          cardArray[i].innerHTML += "termList[randArray[i]]";
     //          console.log(cardArray[i] + " is set to " + termList[randArray[i]]);
     //        }
+
             for(let i = 0; i < terms; i++){
               let $cellElem = $("<div class='carousel-cell'><div class='flip-card'><div class='flip-card-inner'><div class='flip-card-front'><h1 class='cardfront'></h1></div><div class='flip-card-back'><p class='cardback'></p></div></div></div></div>");
               $('.main-carousel').flickity('append', $cellElem );
