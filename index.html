@@ -25,7 +25,7 @@
           const defnSetOne_topicOne = ["mē", "quid", "nihil", "nōn", "saepe", "sī", "amō, amāre, amāvi, amātum", "cōgitō, cōgitāre, cōgitāvī, cōgitātum", "dēbeō, dēbēre, dēbuī, dēbitum", "dō, dare, dedī, datum", "errō, errāre, errāvī, errātum", "laudō, laudāre, laudāvī, laudātum", "moneō, monēre, monuī, monitum", "salveō, salvēre", "servō, servāre, servāvī, servātum", "cōnservō, cōnservāre, cōnservāvī, cōnservātum", "terreō, terrēre, terruī, territum", "valeō, valēre, valuī, valitūrum", "videō, vidēre, vīdī, vīsum", "vocō, vocāre, vocāvī, vocātum"];
 
           const termSetTwo_topicOne = ["fame", "form, shape, beauty", "fortune, luck", "ire, anger", "sailor", "fatherland, native land, (one's) country", "money", "philosophy", "penalty, punishment", "to pay the price", "poet", "gate, entrance", "girl", "rose", "feeling, thought, opinion, vote, sentence", "life, mode of life", "ancient, old-time", "large, great, important", "my", "much, many", "your (s.)", "and, even", "but", "oh!", "without (+ ablative)", "is"];
-          const defnSetTwo_topicOne = ["fāma fāmae (f.)", "fōrma, fōrmae (f.)", "fortūna, fortūnae (f.)", "īra, īrae (f.)", "nauta, nautae (m.)", "patria, patriae (f.)", "pecūnia, pecūniae (f.)", "philosophia, philosophiae (f.)", "poena, poenae (f.)", "poenās dare", "poēta, poētae (m.)", "porta, portae (f.)", "puella, puellae (f.)", "rosa, rosae (f.)", "sententia, sententiae (f.)", "vīta, vītae (f.)", "antīqu(-us/-a/-um)", "magn(-us/-a/-um)", "me(-us/-a/-um)", "mult(-us/-a/-um)", "tu(-us/-a/-um)", "et", "sed", "ō!", "sine (+ ablative)", "est"];
+          const defnSetTwo_topicOne = ["fāma, fāmae (f.)", "fōrma, fōrmae (f.)", "fortūna, fortūnae (f.)", "īra, īrae (f.)", "nauta, nautae (m.)", "patria, patriae (f.)", "pecūnia, pecūniae (f.)", "philosophia, philosophiae (f.)", "poena, poenae (f.)", "poenās dare", "poēta, poētae (m.)", "porta, portae (f.)", "puella, puellae (f.)", "rosa, rosae (f.)", "sententia, sententiae (f.)", "vīta, vītae (f.)", "antīqu(-us/-a/-um)", "magn(-us/-a/-um)", "me(-us/-a/-um)", "mult(-us/-a/-um)", "tu(-us/-a/-um)", "et", "sed", "ō!", "sine (+ ablative)", "est"];
 
           const termLists_topicOne = [termSetOne_topicOne, termSetTwo_topicOne];
           const defnLists_topicOne = [defnSetOne_topicOne, defnSetTwo_topicOne];
@@ -61,8 +61,15 @@
             var termList = [];
             var defnList = [];
 
-            termList = termLists[set-1];
-            defnList = defnLists[set-1];
+            var ord = prompt("Would you like to study the term or the definition? \n 1. Term \n 2. Definition");
+
+            if (ord == 1){
+              termList = termLists[set-1];
+              defnList = defnLists[set-1];
+            } else if (ord == 2){
+              termList = defnLists[set-1];
+              defnList = termLists[set-1];
+            }
 
             var terms = termList.length;
             var randArray = [];
