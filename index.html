@@ -19,18 +19,42 @@
     </div>
     <script>
 
-          //if ($(window).width() < 1280)
+          // Latin
 
-          const termSetOne = ["Chapter 1 Term 1", "Chapter 1 Term 2", "Chapter 1 Term 3"];
-          const defnSetOne = ["Definition 1", "Definition 2", "Definition 3"];
+          const termSetOne_topicOne = ["me, myself", "what", "nothing", "not", "often", "if", "to love", "to think", "to owe, to ought to", "to give, to offer", "to make a mistake, err, or go astray", "to praise", "to remind, warn, or advise", "to be well, to be in good health", "to preserve, to save, keep, or guard", "to preserve, to conserve, maintain", "to frighten, to terrify", "to have power, to be well", "to see, to observe, understand", "to call, to summon"];
+          const defnSetOne_topicOne = ["mē", "quid", "nihil", "nōn", "saepe", "sī", "amō, amāre, amāvi, amātum", "cōgitō, cōgitāre, cōgitāvī, cōgitātum", "dēbeō, dēbēre, dēbuī, dēbitum", "dō, dare, dedī, datum", "errō, errāre, errāvī, errātum", "laudō, laudāre, laudāvī, laudātum", "moneō, monēre, monuī, monitum", "salveō, salvēre", "servō, servāre, servāvī, servātum", "cōnservō, cōnservāre, cōnservāvī, cōnservātum", "terreō, terrēre, terruī, territum", "valeō, valēre, valuī, valitūrum", "videō, vidēre, vīdī, vīsum", "vocō, vocāre, vocāvī, vocātum"];
 
-          const termSetTwo = ["Chapter 2 Term 1", "Chapter 2 Term 2", "Chapter 2 Term 3"];
-          const defnSetTwo = ["Definition 1", "Definition 2", "Definition 3"];
+          const termSetTwo_topicOne = ["fame", "form, shape, beauty", "fortune, luck", "ire, anger", "sailor", "fatherland, native land, (one's) country", "money", "philosophy", "penalty, punishment", "to pay the price", "poet", "gate, entrance", "girl", "rose", "feeling, thought, opinion, vote, sentence", "life, mode of life", "ancient, old-time", "large, great, important", "my", "much, many", "your (s.)", "and, even", "but", "oh!", "without (+ ablative)", "is"];
+          const defnSetTwo_topicOne = ["fāma fāmae (f.)", "fōrma, fōrmae (f.)", "fortūna, fortūnae (f.)", "īra, īrae (f.)", "nauta, nautae (m.)", "patria, patriae (f.)", "pecūnia, pecūniae (f.)", "philosophia, philosophiae (f.)", "poena, poenae (f.)", "poenās dare", "poēta, poētae (m.)", "porta, portae (f.)", "puella, puellae (f.)", "rosa, rosae (f.)", "sententia, sententiae (f.)", "vīta, vītae (f.)", "antīqu(-us/-a/-um)", "magn(-us/-a/-um)", "me(-us/-a/-um)", "mult(-us/-a/-um)", "tu(-us/-a/-um)", "et", "sed", "ō!", "sine (+ ablative)", "est"];
 
-          const termLists = [termSetOne, termSetTwo];
-          const defnLists = [defnSetOne, defnSetTwo];
+          const termLists_topicOne = [termSetOne_topicOne, termSetTwo_topicOne];
+          const defnLists_topicOne = [defnSetOne_topicOne, defnSetTwo_topicOne];
+
+
+
+          const termSetOne_topicTwo = ["Topic 2 Chapter 1 Term 1", "Topic 2 Chapter 1 Term 2", "Topic 2 Chapter 1 Term 3"];
+          const defnSetOne_topicTwo = ["Definition 1", "Definition 2", "Definition 3"];
+
+          const termSetTwo_topicTwo = ["Topic 2 Chapter 2 Term 1", "Topic 2 Chapter 2 Term 2", "Topic 2 Chapter 2 Term 3"];
+          const defnSetTwo_topicTwo = ["Definition 1", "Definition 2", "Definition 3"];
+
+          const termLists_topicTwo = [termSetOne_topicTwo, termSetTwo_topicTwo];
+          const defnLists_topicTwo = [defnSetOne_topicTwo, defnSetTwo_topicTwo];
+
+
+
+          const chptTermLists = [termLists_topicOne, termLists_topicTwo];
+          const chptDefnLists = [defnLists_topicOne, defnLists_topicTwo]
 
           $(document).ready(function(){
+
+            var topic = prompt("Enter desired topic set \n 1. Latin 1001 \n 2. Classics 1000 ");
+
+            var termLists = [];
+            var defnLists = [];
+
+            termLists = chptTermLists[topic - 1];
+            defnLists = chptDefnLists[topic - 1];
 
             var set = prompt("Enter desired term set \n 1. Chapter 1 Vocab. \n 2. Chapter 2 Vocab.");
 
