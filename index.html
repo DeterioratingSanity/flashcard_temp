@@ -15,9 +15,25 @@
   </head>
 
   <body>
+    <div id="popMenu" class="inactive">
+      e
+    </div>
+    <br>
+    <div id="popToggle" class="inactive">
+      ☰
+    </div>
+
     <div class="main-carousel" data-flickity='{ "cellAlign": "left", "contain": true}'> <!--  , "wrapAround": true  -->
     </div>
     <script>
+          var menu = $("#popMenu");
+          var toggle = $("#popToggle");
+
+          toggle.on("click", function() {
+            $("#popMenu").toggleClass("inactive active");
+            $("#popToggle").toggleClass("inactive active");
+          });
+
 
           // Latin
 
