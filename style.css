@@ -141,3 +141,27 @@
   font-size: 1.5em;
   box-shadow: 10px 10px #bbb;
 }
+
+.init-card{
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 40vw;
+  height: 45vh;
+
+  border-radius: 10px;
+
+  background-color: #bbb;
+  color: black;
+  box-shadow: 10px 10px dodgerblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.dis{
+  display: none;
+}
