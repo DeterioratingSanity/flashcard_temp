@@ -20,7 +20,7 @@
       <h1 style="color: white; text-shadow: 2px 2px dodgerblue; margin-top: 5vh"><span style="color: dodgerblue; text-shadow: 2px 2px white">flash</span>.card</h1>
 
       <div>
-        <input id="topicSel" list="topics" style="margin: 5vh 0; width: 60%; height: 3.5em; padding: 0 8px" placeholder="Topic">
+        <input id="topicSel" list="topics" style="margin: 5vh 0; width: 60%; height: 3.5em; padding: 0 8px; border-radius: 8px" placeholder="Topic">
         <datalist id="topics">
           <option>Latin 1001</option>
           <option>Classics 1000</option>
@@ -30,7 +30,7 @@
       <hr style="width: 65%; margin: auto">
 
       <div>
-        <input id="setSel" list="sets" style="margin-top: 5vh; width: 60%; height: 3.5em; padding: 0 8px" placeholder="Chapter">
+        <input id="setSel" list="sets" style="margin-top: 5vh; width: 60%; height: 3.5em; padding: 0 8px; border-radius: 8px" placeholder="Chapter">
         <datalist id="sets">
           <!-- <option>Chapter 1</option> <option>Chapter 2</option> -->
         </datalsit>
@@ -105,12 +105,12 @@
             if(temp != -1){
               chapSel = chptTermLists[topicDefs.indexOf(this.value)];
               defnSel = chptDefnLists[topicDefs.indexOf(this.value)];
-              console.log(chapSel); // would be termLists
-              console.log(defnSel);
+              //console.log(chapSel); // would be termLists
+              //console.log(defnSel);
               // populate either selection boxes or another dropdown with these values for termList
 
               setSel = setDefs[temp];
-              console.log(setSel);
+              //console.log(setSel);
               $("#sets").html(""); //clear old inputs thereto
 
               for(let i = 0; i < setSel.length; i++){
@@ -123,9 +123,9 @@
 
             let temp = setSel.indexOf(this.value);
             if (temp != -1){
-              console.log(setSel[temp]);
-              console.log(chapSel[temp]); // terms for the selected set
-              console.log(defnSel[temp]);
+              //console.log(setSel[temp]);
+              //console.log(chapSel[temp]); // terms for the selected set
+              //console.log(defnSel[temp]);
 
               var termList = [];
               termList = chapSel[temp];
@@ -146,7 +146,7 @@
               }
 
               for(let i = 0; i < $(".carousel-cell").length; i++){
-                console.log("e");
+                //console.log("e");
                 $('.main-carousel').flickity('remove', $(".carousel-cell") ); //clears old cards
               }
               for(let i = 0; i < terms; i++){
@@ -165,6 +165,7 @@
               }
 
               $(".init-card").addClass("dis");
+              $('.main-carousel').flickity( 'select', 0 );
             }
           });
 
