@@ -23,7 +23,7 @@
         <input id="topicSel" list="topics" style="margin: 5vh 0; width: 60%; height: 3.5em; padding: 0 8px; border-radius: 8px" placeholder="Topic">
         <datalist id="topics">
           <option>Latin 1001</option>
-          <option>Classics 1000</option>
+          <option>---</option>
         </datalsit>
       </div>
 
@@ -103,44 +103,47 @@
                                          "m. -us, -ī; \n sometimes -er, -ī; <br> n. -um, -a", "-ī, -ōrum",               "-ō, -īs",               "m. -um, -ōs; <br> n. -um, -a","-ō, -īs",                 "m. -e, ī; \n sometimes -er, -ī; <br> n. -um, -a",
                                          "f., m. varies, -es <br> n. varies, -a", "-is, -um", "-ī, -ibus", "f., m. -em, -es <br> n. varies, -a", "-e, -ibus"];
 
-          const termSetFourteen_topicOne = ['Present Tense, 1st Person Singular', 'Present Tense, 2nd Person Singular', 'Present Tense, 3rd Person Singular', 'Present Tense, 1st Person Plural', 'Present Tense, 2nd Person Plural', 'Present Tense, 3rd Person Plural'];
-          const defnSetFourteen_topicOne = ['-o', '-s', '-t', '-mus', '-tis', '-nt'];
+          const termSetFourteen_topicOne = ["Infinitive", "Imperative", "Present", "Future", "Imperfect"];
+          const defnSetFourteen_topicOne = ["-āre", "-ā, -āte", "-ō, -ās, -at, -āmus, -ātis, -ant", "-ābo, -ābis, -ābit, -ābimus, -ābitis, -ābunt", "-ābam, -ābās, -ābat, -ābāmus, -ābātis, -ābant"];
 
-          const termSetFifteen_topicOne = ['Future Tense, 1st Person Singular', 'Future Tense, 2nd Person Singular', 'Future Tense, 3rd Person Singular', 'Future Tense, 1st Person Plural', 'Future Tense, 2nd Person Plural', 'Future Tense, 3rd Person Plural'];
-          const defnSetFifteen_topicOne = ['-bō', '-bis', '-bit', '-bimus', '-bitis', '-bunt'];
+          const termSetFifteen_topicOne = ["Infinitive", "Imperative", "Present", "Future", "Imperfect"];
+          const defnSetFifteen_topicOne = ["-ēre", "-ē, -ēte", "-eō, -ēs, -et, -ēmus, -ētis, -ent", "-ēbo, -ēbis, -ēbit, -ēbimus, -ēbitis, -ēbunt", "-ēbam, -ēbās, -ēbat, -ēbāmus, -ēbātis, -ēbant"];
 
-          const termSetSixteen_topicOne = ['Imperfect Tense, 1st Person Singular', 'Imperfect Tense, 2nd Person Singular', 'Imperfect Tense, 3rd Person Singular', 'Imperfect Tense, 1st Person Plural', 'Imperfect Tense, 2nd Person Plural', 'Imperfect Tense, 3rd Person Plural'];
-          const defnSetSixteen_topicOne = ["-bam", "-bās", "-bat", "-bāmus", "-bātis", "-bant"];
+          const termSetSixteen_topicOne = ["Infinitive", "Imperative", "Present", "Future", "Imperfect"];
+          const defnSetSixteen_topicOne = ["-ere", "-e, -ite; dūcere, dīcere, facere, ferre all drop -ere in sg.", "-o, -is, -it, -imus, -itis, -unt", "-am, -ēs, -et, -ēmus, -ētis, -ent", "-ēbam, -ēbas, -ēbat, -ēbamus, -ēbatis, -ēbant"];
 
           const termSetSeventeen_topicOne = ["Infinitive", "Imperative", "Present", "Future", "Imperfect"];
-          const defnSetSeventeen_topicOne = ["-ere", "-e, -ite; dūcere, dīcere, facere, ferre all drop -ere in sg.", "-o, -is, -it, -imus, -itis, -unt", "-am, -ēs, -et, -ēmus, -ētis, -ent", "-ēbam, ēbas, -ēbat, -ēbamus, -ēbatis, -ēbant"];
+          const defnSetSeventeen_topicOne = ["-īre", "-ī, -īte", "-iō, -īs, -it, -īmus, -ītis, -iunt", "-iam, -iēs, -iet, -iēmus, -iētis, -ient", "-iēbam, -iēbas, -iēbat, -iēbamus, -iēbatis, -iēbant"];
 
-          const termSetEightteen_topicOne = ["this, these, nom. sg,", "this, these, nom. pl,", "this, these, gen. sg,", "this, these, gen. pl,", "this, these, dat. sg,", "this, these, dat. pl,","this, these, acc. sg,", "this, these, acc. pl,", "this, these, abl. sg,", "this, these, abl. pl,", "that, those, nom. sg,", "that, those, nom. pl,", "that, those, gen. sg,", "that, those, gen. pl,", "that, those, dat. sg,", "that, those, dat. pl,","that, those, acc. sg,", "that, those, acc. pl,", "that, those, abl. sg,", "that, those, abl. pl,",   "that (derogatory), nom. sg,", "that (derogatory), nom. pl,", "that (derogatory), gen. sg,", "that (derogatory), gen. pl,", "that (derogatory), dat. sg,", "that (derogatory), dat. pl,","that (derogatory), acc. sg,", "that (derogatory), acc. pl,", "that (derogatory), abl. sg,", "that (derogatory), abl. pl,"];
-          const defnSetEightteen_topicOne = ["hic, haec, hoc", "hī, hae, haec", "huius, huius, huius", "hōrum, hārum, hōrum", "huic, huic, huic", "hīs, hīs, hīs", "hōnc, hānc, hoc", "hos, has, haec", "hoc, hac, hoc", "hīs, hīs, hīs", "ille, illa, illud", "illī, illae, illa", "illius, illius, illius", "illorum, illarum, illorum", "illi, illi, illi", "illīs, illīs, illīs", "illum, illam, illud", "illos, illas, illa", "illo, illa, illo", "illīs, illīs, illīs", "iste, ista, istud", "istī, istae, ista", "istius, istius, istius", "istorum, istarum, istorum", "istī, istī, istī", "istīs, istīs, istīs", "istum, istam, istud", "istos, istas, ista", "isto, ista, isto", "istis, istis, istis"];
+          const termSetEightteen_topicOne = ["Perfect", "Pluperfect","Future Perfect"];
+          const defnSetEightteen_topicOne = ["-ī, -īsti, -it, -imus, -istis, -erunt", "-eram, -eras, -erat, -eramus, -eratis, -erant;<br> imperfect of sum", "-ero, -eris, -erit, -erimus, -eritis, <b>-erint</b>;<br> Almost future of sum"];
 
-          const termSetNineteen_topicOne = ["1st Singular", "1st Plural", "2nd Singular", "2nd Plural", "3rd Singular Masc", "3rd Plural Masc", "3rd Singular Fem", "3rd Plural Fem", "3rd Singular Neut", "3rd Plural Neut",];
-          const defnSetNineteen_topicOne = ["ego, meī, mihi, mē, mē", "nōs, nostrum, nostrī, nōbīs, nōs, nōbīs", "tū, tuī, tibi, tē, tē", "vōs, vestrum, vestrī, vōbīs, vos, vōbīs", "is, eius, eī, eum, eō", "eī/iī, eōrum, eīs, eōs, eīs", "ea, eius, eī, eam, eā", "eae, eārum, eīs, eās, eīs", "id, euis, ei, id, eō", "ea, eōrum, eīs, ea, eīs"];
+          const termSetNineteen_topicOne = ["this, these, nom. sg,", "this, these, nom. pl,", "this, these, gen. sg,", "this, these, gen. pl,", "this, these, dat. sg,", "this, these, dat. pl,","this, these, acc. sg,", "this, these, acc. pl,", "this, these, abl. sg,", "this, these, abl. pl,", "that, those, nom. sg,", "that, those, nom. pl,", "that, those, gen. sg,", "that, those, gen. pl,", "that, those, dat. sg,", "that, those, dat. pl,","that, those, acc. sg,", "that, those, acc. pl,", "that, those, abl. sg,", "that, those, abl. pl,",   "that (derogatory), nom. sg,", "that (derogatory), nom. pl,", "that (derogatory), gen. sg,", "that (derogatory), gen. pl,", "that (derogatory), dat. sg,", "that (derogatory), dat. pl,","that (derogatory), acc. sg,", "that (derogatory), acc. pl,", "that (derogatory), abl. sg,", "that (derogatory), abl. pl,"];
+          const defnSetNineteen_topicOne = ["hic, haec, hoc", "hī, hae, haec", "huius, huius, huius", "hōrum, hārum, hōrum", "huic, huic, huic", "hīs, hīs, hīs", "hōnc, hānc, hoc", "hos, has, haec", "hoc, hac, hoc", "hīs, hīs, hīs", "ille, illa, illud", "illī, illae, illa", "illius, illius, illius", "illorum, illarum, illorum", "illi, illi, illi", "illīs, illīs, illīs", "illum, illam, illud", "illos, illas, illa", "illo, illa, illo", "illīs, illīs, illīs", "iste, ista, istud", "istī, istae, ista", "istius, istius, istius", "istorum, istarum, istorum", "istī, istī, istī", "istīs, istīs, istīs", "istum, istam, istud", "istos, istas, ista", "isto, ista, isto", "istis, istis, istis"];
 
-          const termLists_topicOne = [termSetOne_topicOne, termSetTwo_topicOne, termSetThree_topicOne, termSetFour_topicOne, termSetFive_topicOne, termSetSix_topicOne, termSetSeven_topicOne, termSetEight_topicOne, termSetNine_topicOne, termSetTen_topicOne, termSetEleven_topicOne, termSetTwelve_topicOne, termSetThirteen_topicOne, termSetFourteen_topicOne, termSetFifteen_topicOne, termSetSixteen_topicOne, termSetSeventeen_topicOne, termSetEightteen_topicOne, termSetNineteen_topicOne];
-          const defnLists_topicOne = [defnSetOne_topicOne, defnSetTwo_topicOne, defnSetThree_topicOne, defnSetFour_topicOne, defnSetFive_topicOne, defnSetSix_topicOne, defnSetSeven_topicOne, defnSetEight_topicOne, defnSetNine_topicOne, defnSetTen_topicOne, defnSetEleven_topicOne, defnSetTwelve_topicOne, defnSetThirteen_topicOne, defnSetFourteen_topicOne, defnSetFifteen_topicOne, defnSetSixteen_topicOne, defnSetSeventeen_topicOne, defnSetEightteen_topicOne, defnSetNineteen_topicOne];
+          const termSetTwenty_topicOne = ["1st Singular", "1st Plural", "2nd Singular", "2nd Plural", "3rd Singular Masc", "3rd Plural Masc", "3rd Singular Fem", "3rd Plural Fem", "3rd Singular Neut", "3rd Plural Neut",];
+          const defnSetTwenty_topicOne = ["ego, meī, mihi, mē, mē", "nōs, nostrum, nostrī, nōbīs, nōs, nōbīs", "tū, tuī, tibi, tē, tē", "vōs, vestrum, vestrī, vōbīs, vos, vōbīs", "is, eius, eī, eum, eō", "eī/iī, eōrum, eīs, eōs, eīs", "ea, eius, eī, eam, eā", "eae, eārum, eīs, eās, eīs", "id, euis, ei, id, eō", "ea, eōrum, eīs, ea, eīs"];
 
-          const topOneDefs = ["Chapter 1", "Chapter 2", "Chapter 3", "Chapter 4", "Chapter 5", "Chapter 6", "Chapter 7", "Chapter 8", "Chapter 9", "Chapter 10", "Chapter 11", "Chapter 12", "Declensions", "Present Endings (1&2)", "Future Endings(1&2)", "Imperfect Endings(1&2)", "3rd Conjugation Present System", "Demonstrative Adjectives", "Personal Pronouns"];
+          const termLists_topicOne = [termSetOne_topicOne, termSetTwo_topicOne, termSetThree_topicOne, termSetFour_topicOne, termSetFive_topicOne, termSetSix_topicOne, termSetSeven_topicOne, termSetEight_topicOne, termSetNine_topicOne, termSetTen_topicOne, termSetEleven_topicOne, termSetTwelve_topicOne, termSetThirteen_topicOne, termSetFourteen_topicOne, termSetFifteen_topicOne, termSetSixteen_topicOne, termSetSeventeen_topicOne, termSetEightteen_topicOne, termSetNineteen_topicOne, termSetTwenty_topicOne];
+          const defnLists_topicOne = [defnSetOne_topicOne, defnSetTwo_topicOne, defnSetThree_topicOne, defnSetFour_topicOne, defnSetFive_topicOne, defnSetSix_topicOne, defnSetSeven_topicOne, defnSetEight_topicOne, defnSetNine_topicOne, defnSetTen_topicOne, defnSetEleven_topicOne, defnSetTwelve_topicOne, defnSetThirteen_topicOne, defnSetFourteen_topicOne, defnSetFifteen_topicOne, defnSetSixteen_topicOne, defnSetSeventeen_topicOne, defnSetEightteen_topicOne, defnSetNineteen_topicOne, defnSetTwenty_topicOne];
 
-          const termSetOne_topicTwo = ["Topic 2 Chapter 1 Term 1", "Topic 2 Chapter 1 Term 2", "Topic 2 Chapter 1 Term 3"];
-          const defnSetOne_topicTwo = ["Definition 1", "Definition 2", "Definition 3"];
+          const topOneDefs = ["Chapter 1", "Chapter 2", "Chapter 3", "Chapter 4", "Chapter 5", "Chapter 6", "Chapter 7", "Chapter 8", "Chapter 9", "Chapter 10", "Chapter 11", "Chapter 12", "Declensions", "1st Declension Present System", "2nd Conjugation Present System", "3rd Conjugation Present System", "4th Conjugation Present System", "Perfect System", "Demonstrative Adjectives", "Personal Pronouns"];
 
-          const termSetTwo_topicTwo = ["Topic 2 Chapter 2 Term 1", "Topic 2 Chapter 2 Term 2", "Topic 2 Chapter 2 Term 3"];
-          const defnSetTwo_topicTwo = ["Definition 1", "Definition 2", "Definition 3"];
+          const termSetOne_topicTwo = ["---"];
+          const defnSetOne_topicTwo = ["---"];
+
+          const termSetTwo_topicTwo = ["---"];
+          const defnSetTwo_topicTwo = ["---"];
 
           const termLists_topicTwo = [termSetOne_topicTwo, termSetTwo_topicTwo];
           const defnLists_topicTwo = [defnSetOne_topicTwo, defnSetTwo_topicTwo];
 
-          const topTwoDefs = ["TBD"];
+          const topTwoDefs = ["---"];
 
           const chptTermLists = [termLists_topicOne, termLists_topicTwo];
           const chptDefnLists = [defnLists_topicOne, defnLists_topicTwo]
 
-          const topicDefs = ["Latin 1001", "Classics 1000"];
+          const topicDefs = ["Latin 1001", "---"];
           const setDefs = [topOneDefs,topTwoDefs];
 
           var setSel = [];
