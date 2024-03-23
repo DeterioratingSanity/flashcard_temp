@@ -20,6 +20,7 @@
   margin-top: 20px;
   cursor: pointer;
   position: absolute;
+  user-select: none;
 }
 #popToggle.inactive{
   margin-left: 40px;
@@ -185,6 +186,7 @@
   cursor: pointer;
   position: absolute;
   transition: box-shadow 0.5s;
+  user-select: none;
 }
 #shfToggle:hover{
   box-shadow: 0 2px grey;

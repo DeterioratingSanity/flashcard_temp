@@ -58,7 +58,6 @@
             $("#popToggle").toggleClass("inactive active");
           });
 
-
           // Latin
 
           const termSetOne_topicOne = ["me, myself", "what", "nothing", "not", "often", "if", "to love", "to think", "to owe, to ought to", "to give, to offer", "to make a mistake, err, or go astray", "to praise", "to remind, warn, or advise", "to be well, to be in good health", "to preserve, to save, keep, or guard", "to preserve, to conserve, maintain", "to frighten, to terrify", "to have power, to be well", "to see, to observe, understand", "to call, to summon"];
@@ -131,6 +130,8 @@
           const termSetTwentyTwo_topicOne = ["1st Singular", "1st Plural", "2nd Singular", "2nd Plural", "3rd Singular Masc", "3rd Plural Masc", "3rd Singular Fem", "3rd Plural Fem", "3rd Singular Neut", "3rd Plural Neut",];
           const defnSetTwentyTwo_topicOne = ["ego, meī, mihi, mē, mē", "nōs, nostrum, nostrī, nōbīs, nōs, nōbīs", "tū, tuī, tibi, tē, tē", "vōs, vestrum, vestrī, vōbīs, vos, vōbīs", "is, eius, eī, eum, eō", "eī/iī, eōrum, eīs, eōs, eīs", "ea, eius, eī, eam, eā", "eae, eārum, eīs, eās, eīs", "id, euis, ei, id, eō", "ea, eōrum, eīs, ea, eīs"];
 
+          // Organization
+
           const termLists_topicOne = [termSetOne_topicOne, termSetTwo_topicOne, termSetThree_topicOne, termSetFour_topicOne, termSetFive_topicOne, termSetSix_topicOne, termSetSeven_topicOne, termSetEight_topicOne, termSetNine_topicOne, termSetTen_topicOne, termSetEleven_topicOne, termSetTwelve_topicOne, termSetThirteen_topicOne, termSetFourteen_topicOne, termSetFifteen_topicOne, termSetSixteen_topicOne, termSetSeventeen_topicOne, termSetEightteen_topicOne, termSetNineteen_topicOne, termSetTwenty_topicOne, termSetTwentyOne_topicOne, termSetTwentyTwo_topicOne];
           const defnLists_topicOne = [defnSetOne_topicOne, defnSetTwo_topicOne, defnSetThree_topicOne, defnSetFour_topicOne, defnSetFive_topicOne, defnSetSix_topicOne, defnSetSeven_topicOne, defnSetEight_topicOne, defnSetNine_topicOne, defnSetTen_topicOne, defnSetEleven_topicOne, defnSetTwelve_topicOne, defnSetThirteen_topicOne, defnSetFourteen_topicOne, defnSetFifteen_topicOne, defnSetSixteen_topicOne, defnSetSeventeen_topicOne, defnSetEightteen_topicOne, defnSetNineteen_topicOne, defnSetTwenty_topicOne, defnSetTwentyOne_topicOne, defnSetTwentyTwo_topicOne];
 
@@ -157,6 +158,8 @@
           var chapSel = [];
           var defnSel = [];
 
+          var curr;
+
           $("#topicSel").on("change", function(){
             //console.log(this.value);
             //console.log(topicDefs.indexOf(this.value));
@@ -167,7 +170,7 @@
               defnSel = chptDefnLists[topicDefs.indexOf(this.value)];
               //console.log(chapSel); // would be termLists
               //console.log(defnSel);
-              // populate either selection boxes or another dropdown with these values for termList
+              //populate either selection boxes or another dropdown with these values for termList
 
               setSel = setDefs[temp];
               //console.log(setSel);
@@ -180,111 +183,65 @@
             }
           });
 
-          var curr;
+          function setScramble(val) {
+            let temp = val;
+            if (temp != -1){
+              //console.log(setSel[temp]);
+              //console.log(chapSel[temp]); // terms for the selected set
+              //console.log(defnSel[temp]);
+
+              var termList = [];
+              termList = chapSel[temp];
+              var defnList = [];
+              defnList = defnSel[temp];
+
+              var terms = termList.length;
+              var randArray = [];
+
+              while(randArray.length < terms){
+                let temp = Math.floor(Math.random()*terms);
+
+                if (randArray.indexOf(temp) != -1){
+                  temp = Math.floor(Math.random()*terms);
+                } else {
+                  randArray.push(temp);
+                }
+              }
+
+              for(let i = 0; i < $(".carousel-cell").length; i++){
+                //console.log("e");
+                $('.main-carousel').flickity('remove', $(".carousel-cell") ); //clears old cards
+              }
+              for(let i = 0; i < terms; i++){
+                let $cellElem = $("<div class='carousel-cell'><div class='flip-card'><div class='flip-card-inner'><div class='flip-card-front'><h1 class='cardfront'></h1></div><div class='flip-card-back'><p class='cardback'></p></div></div></div></div>");
+                $('.main-carousel').flickity('append', $cellElem );
+              }
+
+              let cardfront = document.getElementsByClassName('cardfront');
+              for (let i = 0; i < cardfront.length; i++){
+                cardfront[i].innerHTML = termList[randArray[i]];
+              }
+
+              let cardback = document.getElementsByClassName('cardback');
+              for (let i = 0; i < cardback.length; i++){
+                cardback[i].innerHTML = defnList[randArray[i]];
+              }
+
+              $(".init-card").addClass("dis");
+              $('.main-carousel').flickity( 'select', 0 );
+            }
+          }
 
           $("#setSel").on("change", function(){
-
             let temp = setSel.indexOf(this.value);
-
             curr = temp;
-
-            if (temp != -1){
-              //console.log(setSel[temp]);
-              //console.log(chapSel[temp]); // terms for the selected set
-              //console.log(defnSel[temp]);
-
-              var termList = [];
-              termList = chapSel[temp];
-              var defnList = [];
-              defnList = defnSel[temp];
-
-              var terms = termList.length;
-              var randArray = [];
-
-              while(randArray.length < terms){
-                let temp = Math.floor(Math.random()*terms);
-
-                if (randArray.indexOf(temp) != -1){
-                  temp = Math.floor(Math.random()*terms);
-                } else {
-                  randArray.push(temp);
-                }
-              }
-
-              for(let i = 0; i < $(".carousel-cell").length; i++){
-                //console.log("e");
-                $('.main-carousel').flickity('remove', $(".carousel-cell") ); //clears old cards
-              }
-              for(let i = 0; i < terms; i++){
-                let $cellElem = $("<div class='carousel-cell'><div class='flip-card'><div class='flip-card-inner'><div class='flip-card-front'><h1 class='cardfront'></h1></div><div class='flip-card-back'><p class='cardback'></p></div></div></div></div>");
-                $('.main-carousel').flickity('append', $cellElem );
-              }
-
-              let cardfront = document.getElementsByClassName('cardfront');
-              for (let i = 0; i < cardfront.length; i++){
-                cardfront[i].innerHTML = termList[randArray[i]];
-              }
-
-              let cardback = document.getElementsByClassName('cardback');
-              for (let i = 0; i < cardback.length; i++){
-                cardback[i].innerHTML = defnList[randArray[i]];
-              }
-
-              $(".init-card").addClass("dis");
-              $('.main-carousel').flickity( 'select', 0 );
-            }
+            setScramble(temp);
           });
 
-
-          //in all logic I would make a function that calls both places, but I am tired and lazy :D. 9:02 pm 22 March 24. 
+          //in all logic I would make a function that calls both places, but I am tired and lazy :D. 9:02 pm 22 March 24.
+          //Proceeded thereon well and apace, 12:46am 23 Mar 24
           $('#shfToggle').on("click", function(){
-            temp = curr;
-
-            if (temp != -1){
-              //console.log(setSel[temp]);
-              //console.log(chapSel[temp]); // terms for the selected set
-              //console.log(defnSel[temp]);
-
-              var termList = [];
-              termList = chapSel[temp];
-              var defnList = [];
-              defnList = defnSel[temp];
-
-              var terms = termList.length;
-              var randArray = [];
-
-              while(randArray.length < terms){
-                let temp = Math.floor(Math.random()*terms);
-
-                if (randArray.indexOf(temp) != -1){
-                  temp = Math.floor(Math.random()*terms);
-                } else {
-                  randArray.push(temp);
-                }
-              }
-
-              for(let i = 0; i < $(".carousel-cell").length; i++){
-                //console.log("e");
-                $('.main-carousel').flickity('remove', $(".carousel-cell") ); //clears old cards
-              }
-              for(let i = 0; i < terms; i++){
-                let $cellElem = $("<div class='carousel-cell'><div class='flip-card'><div class='flip-card-inner'><div class='flip-card-front'><h1 class='cardfront'></h1></div><div class='flip-card-back'><p class='cardback'></p></div></div></div></div>");
-                $('.main-carousel').flickity('append', $cellElem );
-              }
-
-              let cardfront = document.getElementsByClassName('cardfront');
-              for (let i = 0; i < cardfront.length; i++){
-                cardfront[i].innerHTML = termList[randArray[i]];
-              }
-
-              let cardback = document.getElementsByClassName('cardback');
-              for (let i = 0; i < cardback.length; i++){
-                cardback[i].innerHTML = defnList[randArray[i]];
-              }
-
-              $(".init-card").addClass("dis");
-              $('.main-carousel').flickity( 'select', 0 );
-            }
+            setScramble(curr);
           })
 
           $('input:text').focus(
