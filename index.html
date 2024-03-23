@@ -40,6 +40,7 @@
     </div>
       <br>
     <div id="popToggle" class="inactive">☰</div>
+    <div id="shfToggle" class="inactive">S</div>
 
     <div class="main-carousel" data-flickity='{ "cellAlign": "left", "contain": true}'> <!--  , "wrapAround": true  -->
 
@@ -179,9 +180,14 @@
             }
           });
 
+          var curr;
+
           $("#setSel").on("change", function(){
 
             let temp = setSel.indexOf(this.value);
+
+            curr = temp;
+
             if (temp != -1){
               //console.log(setSel[temp]);
               //console.log(chapSel[temp]); // terms for the selected set
@@ -228,6 +234,58 @@
               $('.main-carousel').flickity( 'select', 0 );
             }
           });
+
+
+          //in all logic I would make a function that calls both places, but I am tired and lazy :D. 9:02 pm 22 March 24. 
+          $('#shfToggle').on("click", function(){
+            temp = curr;
+
+            if (temp != -1){
+              //console.log(setSel[temp]);
+              //console.log(chapSel[temp]); // terms for the selected set
+              //console.log(defnSel[temp]);
+
+              var termList = [];
+              termList = chapSel[temp];
+              var defnList = [];
+              defnList = defnSel[temp];
+
+              var terms = termList.length;
+              var randArray = [];
+
+              while(randArray.length < terms){
+                let temp = Math.floor(Math.random()*terms);
+
+                if (randArray.indexOf(temp) != -1){
+                  temp = Math.floor(Math.random()*terms);
+                } else {
+                  randArray.push(temp);
+                }
+              }
+
+              for(let i = 0; i < $(".carousel-cell").length; i++){
+                //console.log("e");
+                $('.main-carousel').flickity('remove', $(".carousel-cell") ); //clears old cards
+              }
+              for(let i = 0; i < terms; i++){
+                let $cellElem = $("<div class='carousel-cell'><div class='flip-card'><div class='flip-card-inner'><div class='flip-card-front'><h1 class='cardfront'></h1></div><div class='flip-card-back'><p class='cardback'></p></div></div></div></div>");
+                $('.main-carousel').flickity('append', $cellElem );
+              }
+
+              let cardfront = document.getElementsByClassName('cardfront');
+              for (let i = 0; i < cardfront.length; i++){
+                cardfront[i].innerHTML = termList[randArray[i]];
+              }
+
+              let cardback = document.getElementsByClassName('cardback');
+              for (let i = 0; i < cardback.length; i++){
+                cardback[i].innerHTML = defnList[randArray[i]];
+              }
+
+              $(".init-card").addClass("dis");
+              $('.main-carousel').flickity( 'select', 0 );
+            }
+          })
 
           $('input:text').focus(
               function(){
