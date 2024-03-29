@@ -295,6 +295,7 @@
 
             savTerm.push(ordTerm[cellNumber-1]);
             savDefn.push(ordDefn[cellNumber-1]);
+            numSaved();
           }
 
           $('#marToggle').on("click", updateStatus );
@@ -307,6 +308,9 @@
             //savDefn = [];
             }
           })
+          function numSaved(){
+            $("#numSaved").text(savTerm.length);
+          }
       </script>
   </body>
 </html>
