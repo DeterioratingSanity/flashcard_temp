@@ -1,0 +1,70 @@
+alternate permutation on arrangement; replaced, saved hereon for feature reference.
+
+/*      $(document).ready(function(){
+
+  var topic = prompt("Enter desired topic set \n 1. Latin 1001 \n 2. Classics 1000 ");
+
+  var termLists = [];
+  var defnLists = [];
+
+  termLists = chptTermLists[topic - 1];
+  defnLists = chptDefnLists[topic - 1];
+
+  var set = prompt("Enter desired term set \n 1. Chapter 1 Vocab. \n 2. Chapter 2 Vocab.");
+
+  var termList = [];
+  var defnList = [];
+
+  var ord = prompt("Would you like to study the term or the definition? \n 1. Term \n 2. Definition");
+
+  if (ord == 1){
+    termList = termLists[set-1];
+    defnList = defnLists[set-1];
+  } else if (ord == 2){
+    termList = defnLists[set-1];
+    defnList = termLists[set-1];
+  }
+
+  var terms = termList.length;
+  var randArray = [];
+
+  while(randArray.length < terms){
+    var temp = Math.floor(Math.random()*terms);
+
+    if (randArray.indexOf(temp) != -1){
+      temp = Math.floor(Math.random()*terms);
+    } else {
+      randArray.push(temp);
+    }
+  }
+
+  //console.log(randArray);
+
+//        var cardArray = [];
+//        for(let i = 0; i < terms; i++){
+//          cardArray.push("cardfront_" + i);
+//        }
+//        console.log(cardArray);
+
+//        for(let i = 0; i < terms; i++){
+//          //$(cardArray[i]).text(termList[randArray[i]]);
+//          cardArray[i].innerHTML += "termList[randArray[i]]";
+//          console.log(cardArray[i] + " is set to " + termList[randArray[i]]);
+//        }
+
+  for(let i = 0; i < terms; i++){
+    let $cellElem = $("<div class='carousel-cell'><div class='flip-card'><div class='flip-card-inner'><div class='flip-card-front'><h1 class='cardfront'></h1></div><div class='flip-card-back'><p class='cardback'></p></div></div></div></div>");
+    $('.main-carousel').flickity('append', $cellElem );
+  }
+
+  let cardfront = document.getElementsByClassName('cardfront');
+  for (let i = 0; i < cardfront.length; i++){
+    cardfront[i].innerHTML = termList[randArray[i]];
+  }
+
+  let cardback = document.getElementsByClassName('cardback');
+  for (let i = 0; i < cardback.length; i++){
+    cardback[i].innerHTML = defnList[randArray[i]];
+  }
+  //solution c. 'https://stackoverflow.com/questions/62235124/how-to-assign-the-innerhtml-of-array-elements-to-the-values-in-another-array'
+});*/

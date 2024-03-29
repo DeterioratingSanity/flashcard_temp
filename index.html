@@ -42,8 +42,11 @@
     <div id="popToggle" class="inactive">☰</div>
     <div id="shfToggle" class="inactive">S</div>
 
-    <div id="marToggle" class="inactive">M</div>
-    <div id="togToggle" class="inactive">L</div>
+    <div id="reserveSet">
+      <div id="marToggle" class="inactive">M</div>
+      <div id="numSaved">#</div>
+      <div id="togToggle" class="inactive">L</div>
+    </div>
 
     <div class="main-carousel" data-flickity='{ "cellAlign": "left", "contain": true}'> <!--  , "wrapAround": true  -->
 
@@ -175,6 +178,8 @@
           var savTerm = [];
           var savDefn = [];
 
+          var shuff = false;
+
           $("#topicSel").on("change", function(){
             //console.log(this.value);
             //console.log(topicDefs.indexOf(this.value));
@@ -198,7 +203,7 @@
             }
           });
 
-          function setScramble(val) {
+          function setScramble(val, par) {
             let temp = val;
             if (temp != -1){
               //console.log(setSel[temp]);
@@ -210,9 +215,15 @@
               ordDefn = [];
 
               var termList = [];
-              termList = chapSel[temp];
               var defnList = [];
-              defnList = defnSel[temp];
+
+              if(par == true){
+                termList = savTerm;
+                defnList = savDefn;
+              } else {
+                termList = chapSel[temp];
+                defnList = defnSel[temp];
+              }
 
               var terms = termList.length;
               var randArray = [];
@@ -256,13 +267,18 @@
           $("#setSel").on("change", function(){
             let temp = setSel.indexOf(this.value);
             curr = temp;
-            setScramble(temp);
+            shuff = false;
+            setScramble(temp, false);
           });
 
           //in all logic I would make a function that calls both places, but I am tired and lazy :D. 9:02 pm 22 March 24.
           //Proceeded thereon well and apace, 12:46am 23 Mar 24
           $('#shfToggle').on("click", function(){
-            setScramble(curr);
+            if (shuff == false){
+              setScramble(curr, false);
+            } else {
+              setScramble(999, true);
+            }
           })
 
           $('input:text').focus(
@@ -285,123 +301,12 @@
 
           $('#togToggle').on("click", function(){
             if(savTerm.length > 0){
-            //console.log(savTerm);
-            //console.log(savDefn);
-            ordTerm = [];
-            ordDefn = [];
-
-            var termList = savTerm;
-            var defnList = savDefn;
-
-            var terms = termList.length;
-            var randArray = [];
-
-            while(randArray.length < terms){
-              let temp = Math.floor(Math.random()*terms);
-
-              if (randArray.indexOf(temp) != -1){
-                temp = Math.floor(Math.random()*terms);
-              } else {
-                randArray.push(temp);
-              }
+            shuff = true;
+            setScramble(999, true);
+            //savTerm = [];
+            //savDefn = [];
             }
-
-            for(let i = 0; i < $(".carousel-cell").length; i++){
-              //console.log("e");
-              $('.main-carousel').flickity('remove', $(".carousel-cell") ); //clears old cards
-            }
-            for(let i = 0; i < terms; i++){
-              let $cellElem = $("<div class='carousel-cell'><div class='flip-card'><div class='flip-card-inner'><div class='flip-card-front'><h1 class='cardfront'></h1></div><div class='flip-card-back'><p class='cardback'></p></div></div></div></div>");
-              $('.main-carousel').flickity('append', $cellElem );
-            }
-
-            let cardfront = document.getElementsByClassName('cardfront');
-            for (let i = 0; i < cardfront.length; i++){
-              cardfront[i].innerHTML = termList[randArray[i]];
-              ordTerm.push(termList[randArray[i]]);
-            }
-
-            let cardback = document.getElementsByClassName('cardback');
-            for (let i = 0; i < cardback.length; i++){
-              cardback[i].innerHTML = defnList[randArray[i]];
-              ordDefn.push(defnList[randArray[i]]);
-            }
-
-            $(".init-card").addClass("dis");
-            $('.main-carousel').flickity( 'select', 0 );
-
-            savTerm = [];
-            savDefn = [];
-          }
           })
-    /*      $(document).ready(function(){
-
-            var topic = prompt("Enter desired topic set \n 1. Latin 1001 \n 2. Classics 1000 ");
-
-            var termLists = [];
-            var defnLists = [];
-
-            termLists = chptTermLists[topic - 1];
-            defnLists = chptDefnLists[topic - 1];
-
-            var set = prompt("Enter desired term set \n 1. Chapter 1 Vocab. \n 2. Chapter 2 Vocab.");
-
-            var termList = [];
-            var defnList = [];
-
-            var ord = prompt("Would you like to study the term or the definition? \n 1. Term \n 2. Definition");
-
-            if (ord == 1){
-              termList = termLists[set-1];
-              defnList = defnLists[set-1];
-            } else if (ord == 2){
-              termList = defnLists[set-1];
-              defnList = termLists[set-1];
-            }
-
-            var terms = termList.length;
-            var randArray = [];
-
-            while(randArray.length < terms){
-              var temp = Math.floor(Math.random()*terms);
-
-              if (randArray.indexOf(temp) != -1){
-                temp = Math.floor(Math.random()*terms);
-              } else {
-                randArray.push(temp);
-              }
-            }
-
-            //console.log(randArray);
-
-    //        var cardArray = [];
-    //        for(let i = 0; i < terms; i++){
-    //          cardArray.push("cardfront_" + i);
-    //        }
-    //        console.log(cardArray);
-
-    //        for(let i = 0; i < terms; i++){
-    //          //$(cardArray[i]).text(termList[randArray[i]]);
-    //          cardArray[i].innerHTML += "termList[randArray[i]]";
-    //          console.log(cardArray[i] + " is set to " + termList[randArray[i]]);
-    //        }
-
-            for(let i = 0; i < terms; i++){
-              let $cellElem = $("<div class='carousel-cell'><div class='flip-card'><div class='flip-card-inner'><div class='flip-card-front'><h1 class='cardfront'></h1></div><div class='flip-card-back'><p class='cardback'></p></div></div></div></div>");
-              $('.main-carousel').flickity('append', $cellElem );
-            }
-
-            let cardfront = document.getElementsByClassName('cardfront');
-            for (let i = 0; i < cardfront.length; i++){
-              cardfront[i].innerHTML = termList[randArray[i]];
-            }
-
-            let cardback = document.getElementsByClassName('cardback');
-            for (let i = 0; i < cardback.length; i++){
-              cardback[i].innerHTML = defnList[randArray[i]];
-            }
-            //solution c. 'https://stackoverflow.com/questions/62235124/how-to-assign-the-innerhtml-of-array-elements-to-the-values-in-another-array'
-          });*/
       </script>
   </body>
 </html>
