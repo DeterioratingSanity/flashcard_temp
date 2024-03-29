@@ -192,3 +192,53 @@
   box-shadow: 0 2px grey;
   transition: box-shadow 0.5s;
 }
+#marToggle{
+  z-index:999;
+  height: 30px;
+  width: 30px;
+  right: 40px;
+  background-color: dodgerblue;
+  border-radius: 8px;
+  box-shadow: 0 6px grey;
+  font-size: 1.6em;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  font-family: sans-serif;
+  color: white;
+  font-weight: bold;
+  bottom: 40px;
+  cursor: pointer;
+  position: absolute;
+  transition: box-shadow 0.5s;
+  user-select: none;
+}
+#marToggle:hover{
+  box-shadow: 0 2px grey;
+  transition: box-shadow 0.5s;
+}
+#togToggle{
+  z-index:999;
+  height: 30px;
+  width: 30px;
+  right: 90px;
+  background-color: dodgerblue;
+  border-radius: 8px;
+  box-shadow: 0 6px grey;
+  font-size: 1.6em;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  font-family: sans-serif;
+  color: white;
+  font-weight: bold;
+  bottom: 40px;
+  cursor: pointer;
+  position: absolute;
+  transition: box-shadow 0.5s;
+  user-select: none;
+}
+#togToggle:hover{
+  box-shadow: 0 2px grey;
+  transition: box-shadow 0.5s;
+}

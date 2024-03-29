@@ -42,6 +42,9 @@
     <div id="popToggle" class="inactive">☰</div>
     <div id="shfToggle" class="inactive">S</div>
 
+    <div id="marToggle" class="inactive">M</div>
+    <div id="togToggle" class="inactive">L</div>
+
     <div class="main-carousel" data-flickity='{ "cellAlign": "left", "contain": true}'> <!--  , "wrapAround": true  -->
 
     </div>
@@ -166,6 +169,12 @@
 
           var curr;
 
+          var ordTerm = [];
+          var ordDefn = [];
+
+          var savTerm = [];
+          var savDefn = [];
+
           $("#topicSel").on("change", function(){
             //console.log(this.value);
             //console.log(topicDefs.indexOf(this.value));
@@ -195,6 +204,10 @@
               //console.log(setSel[temp]);
               //console.log(chapSel[temp]); // terms for the selected set
               //console.log(defnSel[temp]);
+
+              //clear ord list
+              ordTerm = [];
+              ordDefn = [];
 
               var termList = [];
               termList = chapSel[temp];
@@ -226,11 +239,13 @@
               let cardfront = document.getElementsByClassName('cardfront');
               for (let i = 0; i < cardfront.length; i++){
                 cardfront[i].innerHTML = termList[randArray[i]];
+                ordTerm.push(termList[randArray[i]]);
               }
 
               let cardback = document.getElementsByClassName('cardback');
               for (let i = 0; i < cardback.length; i++){
                 cardback[i].innerHTML = defnList[randArray[i]];
+                ordDefn.push(defnList[randArray[i]]);
               }
 
               $(".init-card").addClass("dis");
@@ -255,6 +270,70 @@
               $(this).val('');
           });
 
+          var $carousel = $('.main-carousel').flickity();
+          var flkty = $carousel.data('flickity');
+
+          function updateStatus() {
+            var cellNumber = flkty.selectedIndex + 1;
+            console.log( cellNumber + '/' + flkty.slides.length );
+
+            savTerm.push(ordTerm[cellNumber-1]);
+            savDefn.push(ordDefn[cellNumber-1]);
+          }
+
+          $('#marToggle').on("click", updateStatus );
+
+          $('#togToggle').on("click", function(){
+            if(savTerm.length > 0){
+            //console.log(savTerm);
+            //console.log(savDefn);
+            ordTerm = [];
+            ordDefn = [];
+
+            var termList = savTerm;
+            var defnList = savDefn;
+
+            var terms = termList.length;
+            var randArray = [];
+
+            while(randArray.length < terms){
+              let temp = Math.floor(Math.random()*terms);
+
+              if (randArray.indexOf(temp) != -1){
+                temp = Math.floor(Math.random()*terms);
+              } else {
+                randArray.push(temp);
+              }
+            }
+
+            for(let i = 0; i < $(".carousel-cell").length; i++){
+              //console.log("e");
+              $('.main-carousel').flickity('remove', $(".carousel-cell") ); //clears old cards
+            }
+            for(let i = 0; i < terms; i++){
+              let $cellElem = $("<div class='carousel-cell'><div class='flip-card'><div class='flip-card-inner'><div class='flip-card-front'><h1 class='cardfront'></h1></div><div class='flip-card-back'><p class='cardback'></p></div></div></div></div>");
+              $('.main-carousel').flickity('append', $cellElem );
+            }
+
+            let cardfront = document.getElementsByClassName('cardfront');
+            for (let i = 0; i < cardfront.length; i++){
+              cardfront[i].innerHTML = termList[randArray[i]];
+              ordTerm.push(termList[randArray[i]]);
+            }
+
+            let cardback = document.getElementsByClassName('cardback');
+            for (let i = 0; i < cardback.length; i++){
+              cardback[i].innerHTML = defnList[randArray[i]];
+              ordDefn.push(defnList[randArray[i]]);
+            }
+
+            $(".init-card").addClass("dis");
+            $('.main-carousel').flickity( 'select', 0 );
+
+            savTerm = [];
+            savDefn = [];
+          }
+          })
     /*      $(document).ready(function(){
 
             var topic = prompt("Enter desired topic set \n 1. Latin 1001 \n 2. Classics 1000 ");
