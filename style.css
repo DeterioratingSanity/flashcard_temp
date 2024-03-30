@@ -3,7 +3,6 @@
   margin: 0;
 }
 
-
 #popToggle{
   z-index:999;
   height: 30px;
@@ -144,8 +143,9 @@
 }
 
 .init-card{
+    z-index: 4;
   position:absolute;
-  top: 50%;
+  top: 49.5%;
   left: 50%;
   transform: translate(-50%, -50%);
 
@@ -163,6 +163,7 @@
     flex-direction: column;
     text-align: center;
 }
+
 .dis{
   display: none;
 }
