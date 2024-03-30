@@ -43,7 +43,10 @@
     <div id="shfToggle" class="inactive">S</div>
 
     <div id="reserveSet">
-      <div id="marToggle" class="inactive">M</div>
+      <div id="addSet">
+        <div class="marToggle" id="plus" class="inactive">+</div>
+        <div class="marToggle" id="minus" class="inactive">-</div>
+      </div>
       <div id="numSaved">#</div>
       <div id="togToggle" class="inactive">L</div>
     </div>
@@ -291,14 +294,24 @@
 
           function updateStatus() {
             var cellNumber = flkty.selectedIndex + 1;
-            console.log( cellNumber + '/' + flkty.slides.length );
-
+            //console.log( cellNumber + '/' + flkty.slides.length );
             savTerm.push(ordTerm[cellNumber-1]);
             savDefn.push(ordDefn[cellNumber-1]);
             numSaved();
           }
+          function reduc() {
+            if(shuff == true){
+              var cellNumber = flkty.selectedIndex + 1;
+              if (savTerm.indexOf(ordTerm[cellNumber-1] != -1)){
+                savTerm.splice(cellNumber-1, cellNumber);
+                numSaved();
+                setScramble(999, true);
+              }
+            }
+          }
 
-          $('#marToggle').on("click", updateStatus );
+          $('#plus').on("click", updateStatus);
+          $('#minus').on("click", reduc);
 
           $('#togToggle').on("click", function(){
             if(savTerm.length > 0){

@@ -215,7 +215,7 @@
   font-weight: bold;
 }
 
-#marToggle{
+.marToggle{
   height: 30px;
   width: 30px;
   background-color: dodgerblue;
@@ -232,7 +232,7 @@
   transition: box-shadow 0.5s;
   user-select: none;
 }
-#marToggle:hover{
+.marToggle:hover{
   box-shadow: 0 2px grey;
   transition: box-shadow 0.5s;
 }
@@ -256,4 +256,10 @@
 #togToggle:hover{
   box-shadow: 0 2px grey;
   transition: box-shadow 0.5s;
+}
+
+#addSet{
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 10px;
 }
