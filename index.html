@@ -24,6 +24,7 @@
         <datalist id="topics">
           <option>Latin Vocab</option><!--<option>Latin 1001</option>-->
           <option>Latin Grammar</option>
+          <option>Special Sets</option>
         </datalsit>
       </div>
 
@@ -357,14 +358,22 @@
 
           const topTwoDefs = ["First Declension", "Second Declension", "Third Declension", "Fourth Declension", "Fifth Declension", "First Conjugation", "Second Conjugation", "Third Conjugation", "Fourth Conjugation", "Perfect System", "Hic, Ille, and Iste", "Personal Pronouns", "Who? What? Which?", "Numbers", "Passive", "Ablative Types", "Participles", "Infinitives", "Comparative and Superlative Adj.", "Special Irregular Adjectives", "Subjunctive Endings", "Subjunctive Forms", "Subordinate Conjunctions", "Interrogatives", "Cum Clauses", "Comparative and Superlative Adv.", "Special Irregular Adverbs", "Special Irregular 3rd Verbs"];
 
+          const termSetOne_topicThree = [];
+          const defnSetOne_topicThree = [];
+
+          const termLists_topicThree = [termSetOne_topicThree];
+          const defnLists_topicThree = [defnSetOne_topicThree];
+
+          const topThreeDefs= ["Vocab Set 1", "Vocab Set 2", "Vocab Set 3", "Vocab Set 4", "Vocab Set 5", "Vocab Set 6", "Vocab Set 7", "Phaedrus Common (1)", "Phaedrus Rare (1)"];
+
           // General Org
 
-          const chptTermLists = [termLists_topicOne, termLists_topicTwo];
-          const chptDefnLists = [defnLists_topicOne, defnLists_topicTwo]
+          const chptTermLists = [termLists_topicOne, termLists_topicTwo, termLists_topicThree];
+          const chptDefnLists = [defnLists_topicOne, defnLists_topicTwo, defnLists_topicThree]
 
           //If this doesn't match the dropdown names, chapter selection dies.
-          const topicDefs = ["Latin Vocab", "Latin Grammar"];
-          const setDefs = [topOneDefs,topTwoDefs];
+          const topicDefs = ["Latin Vocab", "Latin Grammar", "Special Sets"];
+          const setDefs = [topOneDefs,topTwoDefs, topThreeDefs];
 
           var setSel = [];
           var chapSel = [];
