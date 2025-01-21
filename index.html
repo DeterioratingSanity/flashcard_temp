@@ -602,28 +602,28 @@
           }
           function reduc() {
             if(shuff == true){
-              var cellNumber = flkty.selectedIndex + 1;
+              var cellNumber = flkty.selectedIndex;
               var savedAt; // I SWEAR HE MADE ME DO IT (DAMN, THIS SUX TO REED SO DAM MUCH)
-              if ((savedAt = savTerm.indexOf(ordTerm[cellNumber-1]) != -1)){
+              if ((savedAt = savTerm.indexOf(ordTerm[cellNumber]) != -1)){
 
                 // store the val at index (also at lunch bro we winning) element in YYY is a reorder of ZZZ
                 // plug in the if-s*** and un-bork your program. or quit and transfer to culinary arts, bro. its one or the other.
                 
-                console.log(savTerm.indexOf(ordTerm[cellNumber - 1]));
-                console.log(ordTerm[cellNumber - 1]);
-                console.log(savedAt);
-                console.log(savTerm[savedAt]);
+                //console.log(savTerm.indexOf(ordTerm[cellNumber - 1]));
+                //console.log(ordTerm[cellNumber - 1]);
+                //console.log(savedAt);
+                //console.log(savTerm[savedAt]);
                 
                 savTerm.splice(savedAt, 1); // AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA (21 Jan 2025 Lunch I hate this I hate this)
-                savDefn.splice(savedAt, 1); // cellNumber - 1
+                savDefn.splice(savedAt, 1); // cellNumber - 1 ? savedAt?
                 numSaved();
                 setScramble(999, true);
 
 
-                console.log(savTerm.indexOf(ordTerm[cellNumber - 1]));
-                console.log(ordTerm[cellNumber - 1]);
-                console.log(savedAt);
-                console.log(savTerm[savedAt]);
+                //console.log(savTerm.indexOf(ordTerm[cellNumber - 1]));
+                //console.log(ordTerm[cellNumber - 1]);
+                //console.log(savedAt);
+                //console.log(savTerm[savedAt]);
                 
               }
 
