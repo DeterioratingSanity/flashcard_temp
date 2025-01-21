@@ -604,8 +604,8 @@
             if(shuff == true){
               var cellNumber = flkty.selectedIndex + 1;
               if (savTerm.indexOf(ordTerm[cellNumber-1] != -1)){
-                savTerm.splice(cellNumber-1, cellNumber);
-                savDefn.splice(cellNumber-1, cellNumber);
+                savTerm.splice(cellNumber-1, 1); // AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA (21 Jan 2025 Lunch I hate this I hate this)
+                savDefn.splice(cellNumber-1, 1);
                 numSaved();
                 setScramble(999, true);
               }
