@@ -450,8 +450,14 @@
           "sentiō, sentīre, sēnsī, sēnsum", "sequor, sequī, secūtus sum", "serviō, servīre, servīvī / serviī, servītum", "sī (conj)", "sīc (adv)", "silva, silvae, f.", "similis, simile", "simul (adv)", "sine (prep | +abl)", "singulī, singulae, singula", "sinō, sinere, sīvī / siī, situm", "soleō, solēre, soluī, solitum (may be semi-deponent)", "solvō, solvere, solvī, solūtum", "somnus, somnī, m.", "sonō, sonāre, sonuī, sonitum", "spēs, speī, f.", "spīritus, spīritūs, m.",
           "stō, stāre, stetī, statum", "sub (prep | +acc / +abl)", "subitō (adv)", "(no nominative), suī (gen.) (reflexive personal prnoun)", "sum, esse, fuī, ---", "super (adv)", "superbus, superba, superbum", "superus, supera, superum", "sustineō, sustinēre, sustinuī, sustentum", "suus, sua, suum", "taceō, tacēre, tacuī, tacitum", "tālis, tāle", "tamen (adv)", "tandem (adv)", "tangō, tangere, tetigī, tāctum"];
 
-          const termSetSeventeen_topicThree = ["only; so much", "so great, so much, of such size"];
-          const defnSetSeventeen_topicThree = ["tantum (adv)", "tantus, tanta, tantum"];
+          const termSetSeventeen_topicThree = ["only; so much", "so great, so much, of such size", "slow, sluggish", "roof; covered structure, house", "to cover, hide; protect", "sacred enclosure; temple, shrine", "to try, attempt; attack", "time, season, occasion", "to stretch (out), present; direct; aim", "darkness", "to hold, grasp, keep", "back, rear", "to terrify, scare off", "witness", "to fear, be afraid, dread", "to lift, raise; remove; destroy",
+          "whole, entire, all", "to hand over, deliver; yield; surrender", "to drag, draw", "sad, dejected, gloomy, mournful", "you (sg)", "then", "then", "crowd, mob, commotion", "ugly, foul; disgraceful", "safe, secure, guarded", "your (sg)", "where, when", "from where, from which place", "one, a single", "use, practice, experience", "(subordinating; translation varies by clause type)", "each (of two), either (of two)", "useful, advantageous", "wife",
+          "to be strong; in good health; (imperative) farewell", "strong, powerful; effective", "empty, vacant; false, deceptive", "various, diverse, different", "to come", "word", "truly, certainly, indeed", "true, real, genuine", "victor, conqueror", "to see, perceive, observe", "to conquer, defeat, subdue, succeed, outlast", "man, husband", "(manly) virtue, manliness, bravery", "force, power; (pl) strength", "life", "fault, vice, crime", "to avoid, escape, shun",
+          "to live", "to wish, want, be willing", "flying, winged", "bird; flying creature", "you (pl), y'all", "voice, utterance, speech", "generally, commonly", "wound, injury", "face, expression"];
+          const defnSetSeventeen_topicThree = ["tantum (adv)", "tantus, tanta, tantum", "tardus, tarda, tardum", "tēctum, tēctī, n.", "tegō, tegere, tēxī, tēctum", "templum, templī, n.", "temptō, temptāre, temptāvī, temptātum", "tempus, temporis, n.", "tendō, tendere, tetendī, tentum", "tenebrae, tenebrārum, f.", "teneō, tenēre, tenuī, tentum", "tergum,tergī, n.", "terreō, terrēre, terruī, territum", "testis, testis, m. / f.", "timeō, timēre, timuī, ---", "tollō, tollere, sustulī, sublātum",
+          "tōtus, tōta, tōtum", "trādō, trādere, trādidī, trāditum", "trahō, trahere, trāxī, tractum", "trīstis, trīste", "tū (personal pronoun)", "tum (adv)", "tunc (adv)", "turba, turbae, f.", "turpis, turpe", "tūtus, tūta, tūtum", "tuus, tua, tuum", "ubi / ubī (adv)", "unde (adv)", "ūnus, ūna, ūnum", "ūsus, ūsūs, m.", "ut (conj)", "uterque, utraque, utrumque", "ūtilis, ūtile", "uxor, uxōris, f.",
+          "valeō, valēre, valuī, valitum", "validus, valida, validum", "vānus, vāna, vānum", "varius, varia, varium", "veniō, venīre, vēnī, ventum", "verbum, verbī, n.", "vērō (adv)", "vērus, vēra, vērum", "victor, victōris, m.", "videō, vidēre, vīdī, vīsum", "vincō, vincere, vīcī, victum", "vir, virī, m.", "virtūs, virtūtis, f.", "vīs, vīs, f. (irreg)", "vīta, vītae, f.", "vitium, vitiī, n.", "vītō, vītāre, vītāvī, vītātum",
+          "vīvō, vīvere, vīxī, vīctum", "volō, velle, voluī, ---", "volucer, volucris, volucre", "volucris, volucris, f.", "vōs (personal pronoun)", "vōx, vōcis, f.", "vulgō (adv)", "vulnus, vulneris, n.", "vultus, vultūs, m."];
 
           const termSetEighteen_topicThree = [""];
           const defnSetEighteen_topicThree = [];
@@ -608,12 +614,12 @@
 
                 // store the val at index (also at lunch bro we winning) element in YYY is a reorder of ZZZ
                 // plug in the if-s*** and un-bork your program. or quit and transfer to culinary arts, bro. its one or the other.
-                
+
                 //console.log(savTerm.indexOf(ordTerm[cellNumber - 1]));
                 //console.log(ordTerm[cellNumber - 1]);
                 //console.log(savedAt);
                 //console.log(savTerm[savedAt]);
-                
+
                 savTerm.splice(savedAt, 1); // AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA (21 Jan 2025 Lunch I hate this I hate this)
                 savDefn.splice(savedAt, 1); // cellNumber - 1 ? savedAt?
                 numSaved();
@@ -624,7 +630,7 @@
                 //console.log(ordTerm[cellNumber - 1]);
                 //console.log(savedAt);
                 //console.log(savTerm[savedAt]);
-                
+
               }
 
               if(savTerm.length == 0){
