@@ -25,6 +25,7 @@
           <option>Latin Vocab</option><!--<option>Latin 1001</option>-->
           <option>Latin Grammar</option>
           <option>Special Sets</option>
+          <option>Discrete Math</option>
         </datalsit>
       </div>
 
@@ -476,14 +477,33 @@
 
           const topThreeDefs= ["Vocab Set 1", "Vocab Set 2", "Vocab Set 3", "Vocab Set 4", "Vocab Set 5", "Vocab Set 6", "Vocab Set 7", "Phaedrus Common (1)", "Phaedrus Common (2)", "Phaedrus Common (3)", "Phaedrus Common (4)", "Phaedrus Common (5)", "Phaedrus Common (6)", "Phaedrus Common (7)", "Phaedrus Common (8)", "Phaedrus Common (9)", "Phaedrus Common (10*)", "Phaedrus Rare (1)", "Scansion"];
 
+          const termSetOne_topicFour = ["It is not the case that p", "It is the case that p or q", "It is the case that p and q", "It is the case that p or q, but not both", "if p, then q", "if p, q", "q unless not p", "q if p", "q whenever p", "q follows from p", "a necessary condition for p is q", "a sufficient condition for q is p", "p implies q", "p only if q", "q when p", "p is sufficient for q", "q is necessary for p", "p conditional q converse", "p conditional q contrapositive",
+          "p conditional q inverse", "p is neccessary and sufficient for q", "if p then q, and conversely", "p IFF q","p if and only if q"];
+          const defnSetOne_topicFour = ["Negation of p", "p disjunction q (inclusive or)", "p conjunction q", "p xor q (exclusive or)", "p conditional q", "p conditional q", "p conditional q", "p conditional q", "p conditional q", "p conditional q", "p conditional q", "p conditional q", "p conditional q", "p conditional q", "p conditional q", "p conditional q", "p conditional q", "q conditional p", "not q conditional not p",
+          "not p conditional not q", "p biconditional q", "p biconditional q", "p biconditional q", "p biconditional q"];
+
+          const termSetTwo_topicFour = ["Negation", "Conjunction", "Disjunction", "Conditional", "Biconditional", "EDITS"];
+          const defnSetTwo_topicFour = ["First", "Second", "Third", "Fourth", "Fifth", "Add quantifier stuff"];
+
+          const termSetThree_topicFour = [];
+          const defnSetThree_topicFour = [];
+
+          const termSetFour_topicFour = [];
+          const defnSetFour_topicFour = [];
+
+          const termLists_topicFour = [termSetOne_topicFour, termSetTwo_topicFour, termSetThree_topicFour, termSetFour_topicFour];
+          const defnLists_topicFour = [defnSetOne_topicFour, defnSetTwo_topicFour, defnSetThree_topicFour, defnSetFour_topicFour];
+
+          const topFourDefs = ["English Forms", "Precedence", "Equivalences", "English Forms Examples"];
+
           // General Org
 
-          const chptTermLists = [termLists_topicOne, termLists_topicTwo, termLists_topicThree];
-          const chptDefnLists = [defnLists_topicOne, defnLists_topicTwo, defnLists_topicThree]
+          const chptTermLists = [termLists_topicOne, termLists_topicTwo, termLists_topicThree, termLists_topicFour];
+          const chptDefnLists = [defnLists_topicOne, defnLists_topicTwo, defnLists_topicThree, defnLists_topicFour]
 
           //If this doesn't match the dropdown names, chapter selection dies.
-          const topicDefs = ["Latin Vocab", "Latin Grammar", "Special Sets"];
-          const setDefs = [topOneDefs,topTwoDefs, topThreeDefs];
+          const topicDefs = ["Latin Vocab", "Latin Grammar", "Special Sets", "Discrete Math"];
+          const setDefs = [topOneDefs,topTwoDefs, topThreeDefs, topFourDefs];
 
           var setSel = [];
           var chapSel = [];
