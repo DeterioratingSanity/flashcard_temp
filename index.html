@@ -497,10 +497,19 @@
           const termSetFour_topicFour = ["Conditional Disjunction", "Contrapositive Definition", "p or q is equivalent to...", "p and q is equivalent to...", "not (p conditional q) is equivalent to...", "(p conditional q) and (p conditional r) is equivalent to...", "(p conditional r) and (q conditional r) is equivalent to...", "(p conditional q) or (p conditional r) is equivalent to...", "(p conditional r) or (q conditional r) is equivalent to...", "p biconditional q is equivalent to... (with conditionals)", "p biconditional q is equivalent to... (with biconditionals)", "p biconditional q is equivalent to... (with disjunctions)", "not (p biconditional q) is equivalent to..."];
           const defnSetFour_topicFour = ["p conditional q equiv. not p or q", "p conditional q equiv. not q contitional not p", "not p conditional q *flip of the cond-dis*", "not (p conditional not q) *via de morgan's law*", "p and not q *via de morgan's law", "p conditional (q and r)", "(p or q) conditional r *weird to me*", "p conditional (q or r)", "(p and q) conditional r *also weird to me*", "(p conditional q) and (q conditional p)", "not p bioconditional not q", "(p and q) or (not p and not q)", "p biconditional not q *bicon is true on TT, FF; flip one to offset.*"];
 
-          const termLists_topicFour = [termSetOne_topicFour, termSetTwo_topicFour, termSetThree_topicFour, termSetFour_topicFour];
-          const defnLists_topicFour = [defnSetOne_topicFour, defnSetTwo_topicFour, defnSetThree_topicFour, defnSetFour_topicFour];
+          const termSetFive_topicFour = ["Universal Quantifier", "Existential Qualifier", "Order to Read", "Universal to indicate two things", "Existential to indicate two things", "De Morgan redux", "A UQ is analogous to", "An EQ is analogous to"];
+          const defnSetFive_topicFour = ["For All x (in some domain)", "There Exists an (in some domain)", "Outer quantifiers are held to be static while inner are being evaluated (nested loops)", "For all x (if abc, then def)<br>has false positives, but also requires every true positive<br>Cannot AND, would suggest every member is both", "There exists (abc AND def)<br>Cant conditional, would misfire on false positives", "Move negation in by one quantifier and flip that quantifier", "A series of AND", "A series of OR"];
 
-          const topFourDefs = ["English Forms", "Precedence", "Equivalences", "English Forms Examples"];
+          const termSetSix_topicFour = ["Modus Ponens", "Modus Tollens", "Hypothetical Syllogism", "Disjunctive Syllogism", "Addition", "Simplification", "Conjunction", "Resolution"];
+          const defnSetSix_topicFour = ["If p implies q, and p is true<br>Therefore q is true", "If p implies q, and q is false<br>Therefore p is false", "If p implies q, and q implies r<br>Therefore p implies r", "If p or q, and p is false<br>Therefore q is true (and so the reverse)", "If p is true<br>Therefore p OR q is true", "If p and q are true<br>Therefore p is true", "If p is true, and q is true<br>Therefore p AND q is true", "If not p OR r is true, and p OR q is true<br>Therefore either r OR q is true (in that p and not p cannot both be true *XOR*)"];
+
+          const termSetSeven_topicFour = ["Universal Instantiation", "Universal Generalization", "Existential Instantiation", "Existential Generalization"];
+          const defnSetSeven_topicFour = ["If for all x P(x)<br>Therefore P(c) for some arbitrary<br>May generate arbitrary or specific", "If P(c) for an arbitrary c<br>Therefore for all x P(x)<br>May only generate from arbitrary", "If there exists x P(x)<br>Therefore P(c) for some specific c<br>May only generate specific", "If P(c) for a specific element c<br>Therefore there exists x P(x)<br>May generate from arbitrary or specific"];
+
+          const termLists_topicFour = [termSetOne_topicFour, termSetTwo_topicFour, termSetThree_topicFour, termSetFour_topicFour, termSetFive_topicFour, termSetSix_topicFour, termSetSeven_topicFour];
+          const defnLists_topicFour = [defnSetOne_topicFour, defnSetTwo_topicFour, defnSetThree_topicFour, defnSetFour_topicFour, defnSetFive_topicFour, defnSetSix_topicFour, defnSetSeven_topicFour];
+
+          const topFourDefs = ["English Forms", "Precedence", "Equivalences", "Conditions English", "Quantifiers", "Inference Rules for Propositions", "Inference Rules for Quantifiers"];
 
           // General Org
 
