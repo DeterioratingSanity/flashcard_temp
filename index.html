@@ -559,12 +559,12 @@
 
           // General Org
 
-          const chptTermLists = [termLists_topicOne, termLists_topicTwo, termLists_topicThree, termLists_topicFour];
-          const chptDefnLists = [defnLists_topicOne, defnLists_topicTwo, defnLists_topicThree, defnLists_topicFour]
+          const chptTermLists = [termLists_topicOne, termLists_topicTwo, termLists_topicThree, termLists_topicFour, termLists_topicFive];
+          const chptDefnLists = [defnLists_topicOne, defnLists_topicTwo, defnLists_topicThree, defnLists_topicFour, defnLists_topicFive]
 
           //If this doesn't match the dropdown names, chapter selection dies.
           const topicDefs = ["Latin Vocab", "Latin Grammar", "Special Sets", "Discrete Math", "Linguistics"];
-          const setDefs = [topOneDefs,topTwoDefs, topThreeDefs, topFourDefs, topFiveDefs];
+          const setDefs = [topOneDefs,topTwoDefs,topThreeDefs,topFourDefs,topFiveDefs];
 
           var setSel = [];
           var chapSel = [];
@@ -588,6 +588,10 @@
             if(temp != -1){
               chapSel = chptTermLists[topicDefs.indexOf(this.value)];
               defnSel = chptDefnLists[topicDefs.indexOf(this.value)];
+
+              //console.log("E" + topicDefs.indexOf(this.value));
+
+
               //console.log(chapSel); // would be termLists
               //console.log(defnSel);
               //populate either selection boxes or another dropdown with these values for termList
