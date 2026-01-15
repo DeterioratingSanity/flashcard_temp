@@ -26,6 +26,7 @@
           <option>Latin Grammar</option>
           <option>Special Sets</option>
           <option>Discrete Math</option>
+          <option>Linguistics</option>
         </datalsit>
       </div>
 
@@ -545,14 +546,25 @@
 
           const topFourDefs = ["English Forms", "Precedence", "Equivalences", "Conditions English", "Quantifiers", "Inference Rules for Propositions", "Inference Rules for Quantifiers", "Proofs"];
 
+          const termSetOne_topicFive = ["p", "b", "m", "ẉ", "f", "v", "θ", "ð", "t", "d", "n", "ɾ", "s", "z", "ɹ", "l", "tʃ", "dʒ", "ʃ", "ʒ", "j", "k", "g", "ŋ", "w", "ʔ", "h", "m̩", "n̩", "l̩", "ɹ̩"];
+          const defnSetOne_topicFive = ["p", "b", "m", "ẉ", "f", "v", "θ", "ð", "t", "d", "n", "ɾ", "s", "z", "ɹ", "l", "tʃ", "dʒ", "ʃ", "ʒ", "j", "k", "g", "ŋ", "w", "ʔ", "h", "m̩", "n̩", "l̩", "ɹ̩"];
+
+          const termSetTwo_topicFive = [];
+          const defnSetTwo_topicFive = [];
+
+          const termLists_topicFive = [termSetOne_topicFive, termSetTwo_topicFive];
+          const defnLists_topicFive = [defnSetOne_topicFive, defnSetTwo_topicFive];
+
+          const topFiveDefs = ["IPA Consonants", "IPA Vowels"];
+
           // General Org
 
           const chptTermLists = [termLists_topicOne, termLists_topicTwo, termLists_topicThree, termLists_topicFour];
           const chptDefnLists = [defnLists_topicOne, defnLists_topicTwo, defnLists_topicThree, defnLists_topicFour]
 
           //If this doesn't match the dropdown names, chapter selection dies.
-          const topicDefs = ["Latin Vocab", "Latin Grammar", "Special Sets", "Discrete Math"];
-          const setDefs = [topOneDefs,topTwoDefs, topThreeDefs, topFourDefs];
+          const topicDefs = ["Latin Vocab", "Latin Grammar", "Special Sets", "Discrete Math", "Linguistics"];
+          const setDefs = [topOneDefs,topTwoDefs, topThreeDefs, topFourDefs, topFiveDefs];
 
           var setSel = [];
           var chapSel = [];
